@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="processing?name=王一&age=20">Servlet处理超链接</a>
+	<hr/>
+	<form method="post" action="processing">
+		名称：<input name="name"><br/><br/>
+		年龄：<input name="age"><br/><br/>
+		<input type="submit" value="提交">
+		<input type="reset" value="取消">
+	</form><hr/>
+	<!-- enctype="multipart/form-data":不对字符编码；在使用包含文件上传控件的表单时，必须使用该值；需在web.xml中匹配<multipart-config>。
+		文件上传必须用post请求 -->
+	<form method="post" action="upload" enctype="multipart/form-data">
+		名称：<input name="name"><br/><br/>
+		年龄：<input name="age"><br/><br/>
+		上传：<input type="file" name="file"><br/>
+		<input type="submit" value="提交">
+		<input type="reset" value="取消">
+	</form><hr>
+	<p><a href="pages/login.html">用户登录</a></p>
+	<p><a href="/lt">登陆后才能访问</a></p><hr/>
+	<p><a href="/savecookie">存储Cookie</a></p>
+	<p><a href="/temp/readcookie">读取Cookie</a></p>
+	<p><a href="/removecookie">删除Cookie(删除c1)</a></p><hr>
+	<h3>Filter测试：</h3>
+	<p><a href="pages/login-filter.html">用户登录</a></p>
+	<!-- 测试get方法的编码 -->
+	<p><a href="/control/ltf?test=你好">登陆后才能访问</a></p><hr>
+	<h3>Listener测试：</h3>
+	<p><a href="bindAttr">请求listener servlet</a></p>
+	<p><a href="/show/total">查看当前在线人数</a></p>
+</body>
+</html>
